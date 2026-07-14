@@ -49,18 +49,9 @@ df_bronze = spark.createDataFrame(data)
 
 df_bronze = df_bronze.withColumn("_ingested_at", F.current_timestamp())
 
-df_bronze.write.format("delta").mode("overwrite").saveAsTable("lh_Main.bronze.dim_nhl_teams")
+df_bronze.write.format("delta").mode("overwrite").saveAsTable("bronze.dim_nhl_teams")
 
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# CELL ********************
-
-spark.sql("SHOW SCHEMAS IN lh_Main").show()
+print(f"Saved bronze.dim_nhl_teams table with {df_bronze.count()} rows!")
 
 # METADATA ********************
 
