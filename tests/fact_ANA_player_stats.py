@@ -70,7 +70,7 @@ print(df.shape)
 print(df.dtypes)
 print(df.head())
 
-# same into .csv
+# save into .csv
 df.to_csv("tests\\fact_ANA_player_stats.csv", index=False)
 
 
