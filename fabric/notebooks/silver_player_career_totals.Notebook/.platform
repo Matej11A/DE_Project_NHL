@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "silver_player_career_totals"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "bbcc8a91-374b-9eed-4e12-15f27d0458a7"
+  }
+}
