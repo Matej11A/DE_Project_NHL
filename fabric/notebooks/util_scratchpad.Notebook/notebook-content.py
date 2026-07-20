@@ -72,3 +72,47 @@ inferred_df.select("playerId", F.explode("seasonTotals").alias("season_row")).se
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
+
+# CELL ********************
+
+# from pyspark.sql import functions as F
+
+df_bronze = spark.read.table("bronze.dim_nhl_teams")
+
+df_bronze.printSchema()
+
+# df_bronze.select("conference.*").printSchema()
+# df_bronze.select("division.*").printSchema()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+skaters_rdd = spark.read.table("bronze.fact_edge_stats_skaters").select("raw_json").rdd.map(lambda row: row["raw_json"])
+skaters_inferred = spark.read.json(skaters_rdd)
+skaters_inferred.printSchema()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+goalies_rdd = spark.read.table("bronze.fact_edge_stats_goalies").select("raw_json").rdd.map(lambda row: row["raw_json"])
+goalies_inferred = spark.read.json(goalies_rdd)
+goalies_inferred.printSchema()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }

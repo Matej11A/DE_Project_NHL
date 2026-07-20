@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "silver_nhl_teams"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ba27119d-7eb3-b4f3-4eda-a7ccbc8f9d6d"
+  }
+}
