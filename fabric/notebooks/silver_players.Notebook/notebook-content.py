@@ -72,7 +72,32 @@ player_schema = StructType([
 
 # CELL ********************
 
+%run ./util_schema_drift_log
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
 df_bronze = spark.read.table("bronze.dim_players")
+
+
+new_fields, missing_fields, = check_schema_drift(
+    bronze_df=df_bronze,
+    raw_col="raw_json",
+    expected_schema=player_schema,
+    source_entity="dim_players"
+)
+
+if missing_fields:
+    print(f"Fields expected but not found in recent raw JSON: {missing_fields}")
+# if new_fields:
+#     print(f"New fields present in raw JSON but not in schema: {new_fields}")
+
 
 df_parsed = df_bronze.withColumn("parsed", F.from_json(F.col("raw_json"), player_schema))
 
