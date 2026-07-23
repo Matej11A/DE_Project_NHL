@@ -96,8 +96,7 @@ new_fields, missing_fields, = check_schema_drift(
 
 if missing_fields:
     print(f"Fields expected but not found in recent raw JSON: {missing_fields}")
-# if new_fields:
-#     print(f"New fields present in raw JSON but not in schema: {new_fields}")
+
 
 
 df_parsed = df_bronze.withColumn("parsed", F.from_json(F.col("raw_json"), player_schema))
@@ -158,7 +157,7 @@ table_exists = spark.catalog.tableExists("silver.dim_players")
 if not table_exists:
     df_initial_load = (
         df_incoming
-        .withColumn("effective_start_date", F.current_date())
+        .withColumn("effective_start_date", F.lit("1900-01-01").cast("date"))
         .withColumn("effective_end_date", F.lit("9999-12-31").cast("date"))
         .withColumn("is_current", F.lit(True))
         .withColumn("player_sk", F.xxhash64(F.col("player_id"), F.col("effective_start_date")))
@@ -282,19 +281,6 @@ spark.sql("""
     GROUP BY player_id
     HAVING COUNT(*) > 1
 """).show()
-
-# METADATA ********************
-
-# META {
-# META   "language": "python",
-# META   "language_group": "synapse_pyspark"
-# META }
-
-# CELL ********************
-
-# df_dim_player.write.format("delta").mode("overwrite").saveAsTable("silver.dim_players")
-
-# print(f"Saved silver.dim_players table with {df_dim_player.count()} rows!")
 
 # METADATA ********************
 
