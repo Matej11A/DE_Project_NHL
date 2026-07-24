@@ -159,3 +159,40 @@ season_inferred.select(F.explode("seasonTotals").alias("s")).select("s.timeOnIce
 # META   "language": "python",
 # META   "language_group": "synapse_pyspark"
 # META }
+
+# CELL ********************
+
+row_count_check = spark.table("silver.fact_games").count() == games_final.count()
+null_rate_check = games_final.select(
+    F.avg(F.col("winning_scorer_sk").isNull().cast("int")).alias("scorer_null_rate"),
+    F.avg(F.col("winning_goalie_sk").isNull().cast("int")).alias("goalie_null_rate"),
+    F.avg(F.col("home_team_sk").isNull().cast("int")).alias("home_team_null_rate"),
+    F.avg(F.col("away_team_sk").isNull().cast("int")).alias("away_team_null_rate"),
+)
+
+print(f"Row count match: {row_count_check}")
+null_rate_check.show()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+row_count_check = silver_career_totals.count() == df_career_totals.count()
+null_rate_check = df_career_totals.select(
+    F.avg(F.col("player_sk").isNull().cast("int")).alias("player_sk_null_rate")
+)
+
+print(f"Row count match: {row_count_check}")
+null_rate_check.show()
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }

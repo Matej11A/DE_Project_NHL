@@ -1,0 +1,434 @@
+table fact_edge_stats_skaters
+	lineageTag: 1c0c7633-ba50-445c-bad4-a8285461492d
+	sourceLineageTag: [gold].[fact_edge_stats_skaters]
+
+	column player_id
+		dataType: string
+		lineageTag: 6f21fac4-9873-4a96-b123-82dda9ccc229
+		sourceLineageTag: player_id
+		summarizeBy: none
+		sourceColumn: player_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column season
+		dataType: string
+		lineageTag: 3c506ed9-84eb-46cc-b01d-06a1c71608c1
+		sourceLineageTag: season
+		summarizeBy: none
+		sourceColumn: season
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: ba728149-7a7e-4c24-9b13-ee5df70a1656
+		sourceLineageTag: player_sk
+		summarizeBy: none
+		sourceColumn: player_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: fd4cc70d-8845-4cea-92eb-c08d6210afd8
+		sourceLineageTag: date_sk
+		summarizeBy: none
+		sourceColumn: date_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_distance_skated_km
+		dataType: double
+		lineageTag: 5ce8aeab-9387-400b-8853-5b1fd7f1f770
+		sourceLineageTag: total_distance_skated_km
+		summarizeBy: sum
+		sourceColumn: total_distance_skated_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_distance_skated_mi
+		dataType: double
+		lineageTag: d060b1ed-8b7d-49e3-8009-22ec83310a3e
+		sourceLineageTag: total_distance_skated_mi
+		summarizeBy: sum
+		sourceColumn: total_distance_skated_mi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_distance_percentile
+		dataType: double
+		lineageTag: 1ab959cd-a0d2-4f17-ade4-0a88b04726bd
+		sourceLineageTag: total_distance_percentile
+		summarizeBy: sum
+		sourceColumn: total_distance_percentile
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_game_distance_km
+		dataType: double
+		lineageTag: 4325eff7-1b73-4684-a6e6-f38c73d77322
+		sourceLineageTag: max_game_distance_km
+		summarizeBy: sum
+		sourceColumn: max_game_distance_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_game_distance_mi
+		dataType: double
+		lineageTag: ab2385cf-6c18-4944-8b81-70457aeb19bb
+		sourceLineageTag: max_game_distance_mi
+		summarizeBy: sum
+		sourceColumn: max_game_distance_mi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_game_distance_percentile
+		dataType: double
+		lineageTag: dd7a8cad-caf6-477c-ad13-1e4eea0fbfb4
+		sourceLineageTag: max_game_distance_percentile
+		summarizeBy: sum
+		sourceColumn: max_game_distance_percentile
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column top_shot_speed_kmh
+		dataType: double
+		lineageTag: 9523c9c7-94d1-48d8-960f-0dd613c91c64
+		sourceLineageTag: top_shot_speed_kmh
+		summarizeBy: sum
+		sourceColumn: top_shot_speed_kmh
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column top_shot_speed_mph
+		dataType: double
+		lineageTag: a16893ca-e698-4787-bced-9781ed1b67ac
+		sourceLineageTag: top_shot_speed_mph
+		summarizeBy: sum
+		sourceColumn: top_shot_speed_mph
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column top_shot_speed_percentile
+		dataType: double
+		lineageTag: 61776a9c-7cbf-424d-b1b1-1f3f0d449479
+		sourceLineageTag: top_shot_speed_percentile
+		summarizeBy: sum
+		sourceColumn: top_shot_speed_percentile
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_skating_speed_kmh
+		dataType: double
+		lineageTag: 11737585-4725-48f4-b322-c562b0c93444
+		sourceLineageTag: max_skating_speed_kmh
+		summarizeBy: sum
+		sourceColumn: max_skating_speed_kmh
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_skating_speed_mph
+		dataType: double
+		lineageTag: 844a3a72-9f76-4bac-bdf3-8fd8a169bc3e
+		sourceLineageTag: max_skating_speed_mph
+		summarizeBy: sum
+		sourceColumn: max_skating_speed_mph
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_skating_speed_percentile
+		dataType: double
+		lineageTag: 2d94b3c2-5f07-43e6-81fb-dd7948408ada
+		sourceLineageTag: max_skating_speed_percentile
+		summarizeBy: sum
+		sourceColumn: max_skating_speed_percentile
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column bursts_over_20mph
+		dataType: double
+		lineageTag: e1a16fbf-8e82-4ca7-a4ba-e247f370ff8b
+		sourceLineageTag: bursts_over_20mph
+		summarizeBy: sum
+		sourceColumn: bursts_over_20mph
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column bursts_over_20mph_percentile
+		dataType: double
+		lineageTag: 05c56a46-70ed-46c9-b068-612cb202efa3
+		sourceLineageTag: bursts_over_20mph_percentile
+		summarizeBy: sum
+		sourceColumn: bursts_over_20mph_percentile
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column offensive_zone_pct
+		dataType: double
+		lineageTag: c6f571a2-07ec-47aa-ab32-cba2e4c61602
+		sourceLineageTag: offensive_zone_pct
+		summarizeBy: sum
+		sourceColumn: offensive_zone_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column offensive_zone_pct_league_avg
+		dataType: double
+		lineageTag: 90b7bbaf-87c0-4e78-9077-d88276d9b65e
+		sourceLineageTag: offensive_zone_pct_league_avg
+		summarizeBy: sum
+		sourceColumn: offensive_zone_pct_league_avg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column offensive_zone_percentile
+		dataType: double
+		lineageTag: 6a7ca1af-0436-48bd-bc44-0828ce1fb2ad
+		sourceLineageTag: offensive_zone_percentile
+		summarizeBy: sum
+		sourceColumn: offensive_zone_percentile
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column offensive_zone_ev_pct
+		dataType: double
+		lineageTag: f18834bc-f8a2-4b36-9d48-1146cd8e1e77
+		sourceLineageTag: offensive_zone_ev_pct
+		summarizeBy: sum
+		sourceColumn: offensive_zone_ev_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column offensive_zone_ev_pct_league_avg
+		dataType: double
+		lineageTag: bf07be05-b014-42c5-a66c-4ddde4365738
+		sourceLineageTag: offensive_zone_ev_pct_league_avg
+		summarizeBy: sum
+		sourceColumn: offensive_zone_ev_pct_league_avg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column offensive_zone_ev_percentile
+		dataType: double
+		lineageTag: b18223bd-9097-49e0-b4bb-e7459b4db276
+		sourceLineageTag: offensive_zone_ev_percentile
+		summarizeBy: sum
+		sourceColumn: offensive_zone_ev_percentile
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column neutral_zone_pct
+		dataType: double
+		lineageTag: 5cedd61b-0602-4eaf-a542-209ec03c7a07
+		sourceLineageTag: neutral_zone_pct
+		summarizeBy: sum
+		sourceColumn: neutral_zone_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column neutral_zone_pct_league_avg
+		dataType: double
+		lineageTag: 3bb37109-e026-4c9a-9525-61f849e98108
+		sourceLineageTag: neutral_zone_pct_league_avg
+		summarizeBy: sum
+		sourceColumn: neutral_zone_pct_league_avg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column neutral_zone_percentile
+		dataType: double
+		lineageTag: 619ea593-e5d0-4889-b26b-57ea074889f4
+		sourceLineageTag: neutral_zone_percentile
+		summarizeBy: sum
+		sourceColumn: neutral_zone_percentile
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column defensive_zone_pct
+		dataType: double
+		lineageTag: e9005a99-a1ab-471e-8350-b29fa072fabe
+		sourceLineageTag: defensive_zone_pct
+		summarizeBy: sum
+		sourceColumn: defensive_zone_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column defensive_zone_pct_league_avg
+		dataType: double
+		lineageTag: 176c875c-1462-4389-93fe-45651a3dcce9
+		sourceLineageTag: defensive_zone_pct_league_avg
+		summarizeBy: sum
+		sourceColumn: defensive_zone_pct_league_avg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column defensive_zone_percentile
+		dataType: double
+		lineageTag: 95c16f07-2fb7-476c-b754-ba081051ab64
+		sourceLineageTag: defensive_zone_percentile
+		summarizeBy: sum
+		sourceColumn: defensive_zone_percentile
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_distance_skated_leagueAvg_km
+		dataType: double
+		lineageTag: f3307f95-2f3c-4fdf-903c-44f3b30eddec
+		sourceLineageTag: total_distance_skated_leagueAvg_km
+		summarizeBy: sum
+		sourceColumn: total_distance_skated_leagueAvg_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_distance_skated_leagueAvg_mi
+		dataType: double
+		lineageTag: 2736efae-07b5-40ea-ac91-be9d68f68632
+		sourceLineageTag: total_distance_skated_leagueAvg_mi
+		summarizeBy: sum
+		sourceColumn: total_distance_skated_leagueAvg_mi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_game_distance_leagueAvg_km
+		dataType: double
+		lineageTag: e9b86e73-4192-4b3d-a667-131c63cae373
+		sourceLineageTag: max_game_distance_leagueAvg_km
+		summarizeBy: sum
+		sourceColumn: max_game_distance_leagueAvg_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_game_distance_leagueAvg_mi
+		dataType: double
+		lineageTag: 0e726c91-dcce-4a5e-bc67-0069a994d797
+		sourceLineageTag: max_game_distance_leagueAvg_mi
+		summarizeBy: sum
+		sourceColumn: max_game_distance_leagueAvg_mi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column top_shot_speed_leagueAvg_km
+		dataType: double
+		lineageTag: e922b400-c9c2-4057-89aa-704581d842eb
+		sourceLineageTag: top_shot_speed_leagueAvg_km
+		summarizeBy: sum
+		sourceColumn: top_shot_speed_leagueAvg_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column top_shot_speed_leagueAvg_mi
+		dataType: double
+		lineageTag: 21807533-e6d7-4b84-b1eb-8092e364b5ae
+		sourceLineageTag: top_shot_speed_leagueAvg_mi
+		summarizeBy: sum
+		sourceColumn: top_shot_speed_leagueAvg_mi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_skating_speed_leagueAvg_km
+		dataType: double
+		lineageTag: de27440b-8162-4e24-872c-480cc7c08a32
+		sourceLineageTag: max_skating_speed_leagueAvg_km
+		summarizeBy: sum
+		sourceColumn: max_skating_speed_leagueAvg_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column max_skating_speed_leagueAvg_mi
+		dataType: double
+		lineageTag: 27e45e5f-6355-4981-9e96-a82f07b68185
+		sourceLineageTag: max_skating_speed_leagueAvg_mi
+		summarizeBy: sum
+		sourceColumn: max_skating_speed_leagueAvg_mi
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column burst_over_20mph_leagueAvg
+		dataType: double
+		lineageTag: 5a7571b1-5112-4352-ae2a-3bba0b15a9c8
+		sourceLineageTag: burst_over_20mph_leagueAvg
+		summarizeBy: sum
+		sourceColumn: burst_over_20mph_leagueAvg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_edge_stats_skaters = entity
+		mode: directLake
+		source
+			entityName: fact_edge_stats_skaters
+			schemaName: gold
+			expressionSource: 'DirectLake - lh_Main'
+

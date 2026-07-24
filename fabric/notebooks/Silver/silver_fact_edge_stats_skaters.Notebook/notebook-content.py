@@ -156,7 +156,7 @@ df_fact_edge_stats_skaters = df_parsed.select(
     F.col("parsed.skatingSpeed.speedMax.imperial").alias("max_skating_speed_mph"),
     F.col("parsed.skatingSpeed.speedMax.percentile").alias("max_skating_speed_percentile"),
     F.col("parsed.skatingSpeed.speedMax.leagueAvg.metric").alias("max_skating_speed_leagueAvg_km"),
-    F.col("parsed.skatingSpeed.speedMax.leagueAvg.imperial").alias("max_skating_speedd_leagueAvg_mi"),
+    F.col("parsed.skatingSpeed.speedMax.leagueAvg.imperial").alias("max_skating_speed_leagueAvg_mi"),
     F.col("parsed.skatingSpeed.burstsOver20.value").alias("bursts_over_20mph"),
     F.col("parsed.skatingSpeed.burstsOver20.percentile").alias("bursts_over_20mph_percentile"),
     F.col("parsed.skatingSpeed.burstsOver20.leagueAvg.value").alias("burst_over_20mph_leagueAvg"),

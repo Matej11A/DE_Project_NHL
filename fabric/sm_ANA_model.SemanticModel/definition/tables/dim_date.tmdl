@@ -1,0 +1,80 @@
+table dim_date
+	lineageTag: 5e51b5bd-4376-418b-a669-8b71402de06d
+	sourceLineageTag: [gold].[dim_date]
+
+	column date_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 890f4249-7df7-4610-8b12-3de7d86e5064
+		sourceLineageTag: date_sk
+		summarizeBy: none
+		sourceColumn: date_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column full_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9bff773b-b079-450b-8df4-e41b1c028977
+		sourceLineageTag: full_date
+		summarizeBy: none
+		sourceColumn: full_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column calendar_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 48f5a188-37f0-4e5d-a1d3-f1dcade7407e
+		sourceLineageTag: calendar_year
+		summarizeBy: sum
+		sourceColumn: calendar_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: int64
+		formatString: 0
+		lineageTag: 20c62976-cb63-4297-9a4b-2d10e91bbb72
+		sourceLineageTag: month
+		summarizeBy: sum
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column day
+		dataType: int64
+		formatString: 0
+		lineageTag: 3757b81a-ac25-41ec-943c-b56ad94f67ee
+		sourceLineageTag: day
+		summarizeBy: sum
+		sourceColumn: day
+
+		annotation SummarizationSetBy = Automatic
+
+	column day_of_week
+		dataType: string
+		lineageTag: 691ee59e-6bc1-44c4-a280-c67890e5bfe9
+		sourceLineageTag: day_of_week
+		summarizeBy: none
+		sourceColumn: day_of_week
+
+		annotation SummarizationSetBy = Automatic
+
+	column nhl_season
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ca26c23-dfb2-49d4-8f7a-2a2fcf2a3907
+		sourceLineageTag: nhl_season
+		summarizeBy: sum
+		sourceColumn: nhl_season
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_date = entity
+		mode: directLake
+		source
+			entityName: dim_date
+			schemaName: gold
+			expressionSource: 'DirectLake - lh_Main'
+

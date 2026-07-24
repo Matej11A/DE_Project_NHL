@@ -37,6 +37,8 @@ silver_games = spark.table("silver.fact_games")
 
 gold_players = spark.table("gold.dim_players")
 
+gold_teams = spark.table("gold.dim_nhl_teams")
+
 # METADATA ********************
 
 # META {
@@ -52,7 +54,7 @@ silver_games_typed = silver_games.withColumn("game_date", F.to_date(F.col("game_
 scorer_dim = gold_players.alias("scorer_dim")
 
 games_with_scorer = (
-    silver_games.alias("g")
+    silver_games_typed.alias("g")
     .join(
         scorer_dim,
         on=(
@@ -111,8 +113,62 @@ games_with_scorer_and_goalie = (
 
 # CELL ********************
 
-games_with_scorer_and_goalie.write.format("delta").mode("overwrite").saveAsTable("gold.fact_games")
-print(f"Table gold.fact_games saved with {games_with_scorer_and_goalie.count()} rows!")
+home_team_dim = gold_teams.alias("home_team_dim")
+
+games_with_home_team = (
+    games_with_scorer_and_goalie.alias("g3")
+    .join(
+        home_team_dim,
+        on=F.col("g3.home_team_abbrev") == F.col("home_team_dim.abbr"),
+        how="left"
+    )
+    .select(
+        "g3.id", "g3.season", "g3.game_date", "g3.game_type", "g3.game_state",
+        "g3.game_scheduled_state", "g3.home_team_abbrev", "g3.home_team_score",
+        "g3.away_team_abbrev", "g3.away_team_score", "g3.game_outcome_last_period_type",
+        "g3.winning_scorer_sk", "g3.winning_goalie_sk",
+        F.col("home_team_dim.team_sk").alias("home_team_sk"),
+    )
+)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+away_team_dim = gold_teams.alias("away_team_dim")
+
+games_final = (
+    games_with_home_team.alias("g4")
+    .join(
+        away_team_dim,
+        on=F.col("g4.away_team_abbrev") == F.col("away_team_dim.abbr"),
+        how="left"
+    )
+    .select(
+        "g4.id", "g4.season", "g4.game_date", "g4.game_type", "g4.game_state",
+        "g4.game_scheduled_state", "g4.home_team_abbrev", "g4.home_team_score",
+        "g4.away_team_abbrev", "g4.away_team_score", "g4.game_outcome_last_period_type",
+        "g4.winning_scorer_sk", "g4.winning_goalie_sk", "g4.home_team_sk",
+        F.col("away_team_dim.team_sk").alias("away_team_sk"),
+    )
+)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+games_final.write.format("delta").mode("overwrite").saveAsTable("gold.fact_games")
+print(f"Table gold.fact_games saved with {games_final.count()} rows!")
 
 # METADATA ********************
 

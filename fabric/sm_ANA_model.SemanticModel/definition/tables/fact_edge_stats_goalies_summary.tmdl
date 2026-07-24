@@ -1,0 +1,155 @@
+table fact_edge_stats_goalies_summary
+	lineageTag: b5887d9a-ea05-42b5-b2da-ddba0a7fc212
+	sourceLineageTag: [gold].[fact_edge_stats_goalies_summary]
+
+	column player_id
+		dataType: string
+		lineageTag: 2e7c2bba-21c2-4144-b5df-9c6c5531d264
+		sourceLineageTag: player_id
+		summarizeBy: none
+		sourceColumn: player_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column season
+		dataType: string
+		lineageTag: ab93b08d-0acf-4354-86af-2a8d5a325d1b
+		sourceLineageTag: season
+		summarizeBy: none
+		sourceColumn: season
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_code
+		dataType: string
+		lineageTag: a15fe43b-1f47-4dae-8343-8cc7a7a766ff
+		sourceLineageTag: location_code
+		summarizeBy: none
+		sourceColumn: location_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 1984c4bc-2a16-44e3-bdcf-35e9f75a87c8
+		sourceLineageTag: player_sk
+		summarizeBy: none
+		sourceColumn: player_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 1d2ee748-d656-4223-8880-33a6c6e12dbf
+		sourceLineageTag: date_sk
+		summarizeBy: none
+		sourceColumn: date_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column goals_against
+		dataType: int64
+		formatString: 0
+		lineageTag: c2508fe0-9cf6-42c8-8807-db9fa6e51258
+		sourceLineageTag: goals_against
+		summarizeBy: sum
+		sourceColumn: goals_against
+
+		annotation SummarizationSetBy = Automatic
+
+	column goals_against_league_avg
+		dataType: double
+		lineageTag: e5e8aaa0-12d4-42d1-8819-246e622658b6
+		sourceLineageTag: goals_against_league_avg
+		summarizeBy: sum
+		sourceColumn: goals_against_league_avg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column goals_against_percentile
+		dataType: double
+		lineageTag: fbb1d3ee-fd82-4f51-8047-f8588ab89e86
+		sourceLineageTag: goals_against_percentile
+		summarizeBy: sum
+		sourceColumn: goals_against_percentile
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column save_pctg
+		dataType: double
+		lineageTag: 2a5e8750-a597-4998-81e8-a7065f4b9fc1
+		sourceLineageTag: save_pctg
+		summarizeBy: sum
+		sourceColumn: save_pctg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column save_pctg_league_avg
+		dataType: double
+		lineageTag: 98405f75-d8ed-4b29-beed-40d536e0e1e6
+		sourceLineageTag: save_pctg_league_avg
+		summarizeBy: sum
+		sourceColumn: save_pctg_league_avg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column save_pctg_percentile
+		dataType: double
+		lineageTag: 2b59782f-a78b-4413-8e61-56dd4fbe891a
+		sourceLineageTag: save_pctg_percentile
+		summarizeBy: sum
+		sourceColumn: save_pctg_percentile
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column saves
+		dataType: int64
+		formatString: 0
+		lineageTag: 29ffb6f0-2276-411e-a5b8-234e788fa67e
+		sourceLineageTag: saves
+		summarizeBy: sum
+		sourceColumn: saves
+
+		annotation SummarizationSetBy = Automatic
+
+	column saves_league_avg
+		dataType: double
+		lineageTag: 7bdbb41e-701b-410d-bf01-f6f568f508ec
+		sourceLineageTag: saves_league_avg
+		summarizeBy: sum
+		sourceColumn: saves_league_avg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column saves_percentile
+		dataType: double
+		lineageTag: e826a457-9dac-4f01-89eb-a083d83bf128
+		sourceLineageTag: saves_percentile
+		summarizeBy: sum
+		sourceColumn: saves_percentile
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_edge_stats_goalies_summary = entity
+		mode: directLake
+		source
+			entityName: fact_edge_stats_goalies_summary
+			schemaName: gold
+			expressionSource: 'DirectLake - lh_Main'
+

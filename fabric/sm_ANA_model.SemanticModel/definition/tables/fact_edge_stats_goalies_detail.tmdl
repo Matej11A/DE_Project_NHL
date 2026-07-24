@@ -1,0 +1,101 @@
+table fact_edge_stats_goalies_detail
+	lineageTag: dd1184a5-fcc3-4b92-a469-074214404f35
+	sourceLineageTag: [gold].[fact_edge_stats_goalies_detail]
+
+	column player_id
+		dataType: string
+		lineageTag: c9b4fbec-f023-4754-bf87-5bbbc517cf9c
+		sourceLineageTag: player_id
+		summarizeBy: none
+		sourceColumn: player_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column season
+		dataType: string
+		lineageTag: 3be926d7-10c1-4ce5-9798-dd28ef28fcd2
+		sourceLineageTag: season
+		summarizeBy: none
+		sourceColumn: season
+
+		annotation SummarizationSetBy = Automatic
+
+	column area
+		dataType: string
+		lineageTag: 4220d2ea-3558-44bb-8902-cadcf6b748f2
+		sourceLineageTag: area
+		summarizeBy: none
+		sourceColumn: area
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 0cf890cd-7d16-4ee8-bf88-929cf4d2e7b8
+		sourceLineageTag: player_sk
+		summarizeBy: none
+		sourceColumn: player_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d708ddc-b927-4e5b-8880-45a9842e1ecc
+		sourceLineageTag: date_sk
+		summarizeBy: none
+		sourceColumn: date_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column save_pctg
+		dataType: double
+		lineageTag: d3111b2c-368d-4fae-aaaa-ed74f32cd27a
+		sourceLineageTag: save_pctg
+		summarizeBy: sum
+		sourceColumn: save_pctg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column save_pctg_percentile
+		dataType: double
+		lineageTag: 9ae7959a-5ef7-4754-b181-d4481b4d9496
+		sourceLineageTag: save_pctg_percentile
+		summarizeBy: sum
+		sourceColumn: save_pctg_percentile
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column saves
+		dataType: int64
+		formatString: 0
+		lineageTag: be8814ee-0c13-45bd-ae8f-396728e65a4c
+		sourceLineageTag: saves
+		summarizeBy: sum
+		sourceColumn: saves
+
+		annotation SummarizationSetBy = Automatic
+
+	column saves_percentile
+		dataType: double
+		lineageTag: 72267ffe-65a6-4e6d-839a-2b4c588724c2
+		sourceLineageTag: saves_percentile
+		summarizeBy: sum
+		sourceColumn: saves_percentile
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_edge_stats_goalies_detail = entity
+		mode: directLake
+		source
+			entityName: fact_edge_stats_goalies_detail
+			schemaName: gold
+			expressionSource: 'DirectLake - lh_Main'
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "gold_dim_nhl_teams"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5b2bf1c0-0558-b2d4-4637-a99f34926526"
+  }
+}

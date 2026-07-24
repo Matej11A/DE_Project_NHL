@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "gold_fact_edge_skaters_summary"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "bdc20f7e-9b69-8b8f-449e-b2d9044f13e6"
+  }
+}

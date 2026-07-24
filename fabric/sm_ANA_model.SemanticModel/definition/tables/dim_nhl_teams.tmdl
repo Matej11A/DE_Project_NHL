@@ -1,0 +1,76 @@
+table dim_nhl_teams
+	lineageTag: cbeda14a-8f53-43a3-8a2a-2af74761dbb9
+	sourceLineageTag: [gold].[dim_nhl_teams]
+
+	column team_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 7fd3b0c6-189e-44c7-bb8a-6ec1386d255b
+		sourceLineageTag: team_sk
+		summarizeBy: none
+		sourceColumn: team_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column franchise_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 3af20a6f-8dd4-4e6d-9822-9383e27ed26d
+		sourceLineageTag: franchise_id
+		summarizeBy: none
+		sourceColumn: franchise_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 552d3700-8c5b-4776-9bd9-a6204c88e772
+		sourceLineageTag: name
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column abbr
+		dataType: string
+		lineageTag: a601d3f7-c297-487d-8e45-0ed5de9cb2c6
+		sourceLineageTag: abbr
+		summarizeBy: none
+		sourceColumn: abbr
+
+		annotation SummarizationSetBy = Automatic
+
+	column logo
+		dataType: string
+		lineageTag: cb421b74-5de1-4c7a-9990-b97bb6a60b02
+		sourceLineageTag: logo
+		summarizeBy: none
+		sourceColumn: logo
+
+		annotation SummarizationSetBy = Automatic
+
+	column conference_name
+		dataType: string
+		lineageTag: dc6edb1d-3fe3-49fe-83cb-11822c6d2146
+		sourceLineageTag: conference_name
+		summarizeBy: none
+		sourceColumn: conference_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column division_name
+		dataType: string
+		lineageTag: e9a7cd41-d000-4222-aeda-0d005d87d524
+		sourceLineageTag: division_name
+		summarizeBy: none
+		sourceColumn: division_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_nhl_teams = entity
+		mode: directLake
+		source
+			entityName: dim_nhl_teams
+			schemaName: gold
+			expressionSource: 'DirectLake - lh_Main'
+

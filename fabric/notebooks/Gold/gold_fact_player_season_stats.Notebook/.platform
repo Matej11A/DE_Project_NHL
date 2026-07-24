@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "gold_fact_player_season_stats"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "edbc83df-b307-8c10-47f5-628ea1a01e4d"
+  }
+}

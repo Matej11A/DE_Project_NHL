@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "gold_fact_player_career_totals"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c15f4a81-a1b2-9f41-44cd-2ed54a5cb08b"
+  }
+}

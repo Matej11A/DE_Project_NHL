@@ -41,9 +41,9 @@ from pyspark.sql.types import StructField, StructType, ArrayType, LongType, Stri
 # schema definition
 
 season_schema = StructType([
-    StructField("playerId", LongType(), True),
+    StructField("playerId", StringType(), True),
     StructField("seasonTotals", ArrayType(StructType([
-        StructField("season", LongType(), True),
+        StructField("season", StringType(), True),
         StructField("sequence", LongType(), True),
         StructField("leagueAbbrev", StringType(), True),
         StructField("teamName", StructType([

@@ -1,0 +1,79 @@
+table fact_edge_stats_skaters_detail
+	lineageTag: b82d4ef5-4656-4c0b-9ded-9029658a2bcd
+	sourceLineageTag: [gold].[fact_edge_stats_skaters_detail]
+
+	column player_id
+		dataType: string
+		lineageTag: 7442844e-3c36-4396-9dee-d23ddb734da9
+		sourceLineageTag: player_id
+		summarizeBy: none
+		sourceColumn: player_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column season
+		dataType: string
+		lineageTag: 7c0ba823-2830-4b80-9016-59e4ef4a6dc5
+		sourceLineageTag: season
+		summarizeBy: none
+		sourceColumn: season
+
+		annotation SummarizationSetBy = Automatic
+
+	column area
+		dataType: string
+		lineageTag: a02b95ec-feb2-485d-ad74-6842e33493e1
+		sourceLineageTag: area
+		summarizeBy: none
+		sourceColumn: area
+
+		annotation SummarizationSetBy = Automatic
+
+	column player_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: b4c7add2-8837-4bb1-a24f-df9cd81f5e2b
+		sourceLineageTag: player_sk
+		summarizeBy: none
+		sourceColumn: player_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_sk
+		dataType: int64
+		formatString: 0
+		lineageTag: 7697aa3c-0ccc-4a24-af08-4521dca8654e
+		sourceLineageTag: date_sk
+		summarizeBy: none
+		sourceColumn: date_sk
+
+		annotation SummarizationSetBy = Automatic
+
+	column shots
+		dataType: int64
+		formatString: 0
+		lineageTag: 40c84356-30bf-4e2d-a1b6-52426d511f29
+		sourceLineageTag: shots
+		summarizeBy: sum
+		sourceColumn: shots
+
+		annotation SummarizationSetBy = Automatic
+
+	column shots_percentile
+		dataType: double
+		lineageTag: c2697019-e204-4a09-8a5d-e5c420caf379
+		sourceLineageTag: shots_percentile
+		summarizeBy: sum
+		sourceColumn: shots_percentile
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_edge_stats_skaters_detail = entity
+		mode: directLake
+		source
+			entityName: fact_edge_stats_skaters_detail
+			schemaName: gold
+			expressionSource: 'DirectLake - lh_Main'
+
